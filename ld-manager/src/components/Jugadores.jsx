@@ -38,13 +38,14 @@ export function Jugadores ({jugadores, addTitular, addSuplente}){
   }
     return(
         <section>
-            <h1>Jugadores</h1>
             <div className='contenedor-jugadores'>
+            <h1>Jugadores</h1>
             <div ref={gridJugadores} onClick={() => setScrollContainer.bind(this)}>
                 {jugadores.map(j =>(
                     <article className='jugador' key={j.id}>
                         <img  src={j.photo} alt=""/>
                         <h3>{j.name}</h3>
+                        <p>{j.position}</p>
                         <div>
                             <button onClick={() => addTitular(j)}>Titular</button>
                             <button onClick={() => addSuplente(j)}>Suplente</button>
